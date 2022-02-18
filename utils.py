@@ -1,5 +1,7 @@
 import io
 import base64
+import matplotlib.pyplot as plt
+
 
 def encode_image(out_img_eccv16, out_img_siggraph17, img, img_bw):
     s1 = io.BytesIO()
