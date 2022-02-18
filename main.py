@@ -2,8 +2,10 @@ import matplotlib.pyplot as plt
 
 from colorization.colorizers import *
 from utils import encode_image
+import pandas as pd
 
-def compute(image_path):
+
+def compute(image_path:pd.DataFrame):
     use_gpu = False
 
     # load colorizers
@@ -15,7 +17,7 @@ def compute(image_path):
 
     # default size to process images is 256x256
     # grab L channel in both original ("orig") and resized ("rs") resolutions
-    img = load_img(img_path)
+    img = load_img(image_path)
     (tens_l_orig, tens_l_rs) = preprocess_img(img, HW=(256,256))
     if(use_gpu):
         tens_l_rs = tens_l_rs.cuda()
