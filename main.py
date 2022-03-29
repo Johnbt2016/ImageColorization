@@ -62,7 +62,7 @@ def run(image):
 
     eccv16_image, siggraph17_image, comparison_image = save_image(out_img_eccv16, out_img_siggraph17, img, img_bw)
     
-    return siggraph17_image
+    return {"result": siggraph17_image}
 
 
 def run_return_encoded_json(image):
@@ -91,7 +91,7 @@ def run_return_encoded_json(image):
     out_img_eccv16 = postprocess_tens(tens_l_orig, colorizer_eccv16(tens_l_rs).cpu())
     out_img_siggraph17 = postprocess_tens(tens_l_orig, colorizer_siggraph17(tens_l_rs).cpu())
 
-    eccv16_image, siggraph17_image, comparison_image = save_image(out_img_eccv16, out_img_siggraph17, img, img_bw)
+    eccv16_res, siggraph17_res, comparison = encode_image(out_img_eccv16, out_img_siggraph17, img, img_bw)
     
     return [
         {"type": "image", "label": "eccv16", "data":  {"alt": "eccv16 Image Colorization", "src": "data:image/png;base64, " + eccv16_res}},
