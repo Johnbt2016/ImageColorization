@@ -34,7 +34,7 @@ def compute(image_path:pd.DataFrame):
         {"type": "image", "label": "comparison", "data":  {"alt": "Image Colorization Comparison", "src": "data:image/png;base64, " + comparison}},
     ]
 
-def compute_with_image(image):
+def run(image):
     use_gpu = False
 
     # load colorizers
