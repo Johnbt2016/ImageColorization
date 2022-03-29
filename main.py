@@ -34,7 +34,7 @@ def run_with_path(image_path:pd.DataFrame):
         {"type": "image", "label": "comparison", "data":  {"alt": "Image Colorization Comparison", "src": "data:image/png;base64, " + comparison}},
     ]
 
-def run(image):
+def run_return_image(image):
     """
     image: object from PIL.image.open
     """
@@ -62,10 +62,10 @@ def run(image):
 
     eccv16_image, siggraph17_image, comparison_image = save_image(out_img_eccv16, out_img_siggraph17, img, img_bw)
     
-    return {"result": siggraph17_image}
+    return siggraph17_image
 
 
-def run_return_encoded_json(image):
+def run(image):
     """
     image: object from PIL.image.open
     """
