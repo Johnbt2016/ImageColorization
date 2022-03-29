@@ -35,6 +35,9 @@ def compute(image_path:pd.DataFrame):
     ]
 
 def run(image):
+    """
+    image: object from PIL.image.open
+    """
     use_gpu = False
 
     # load colorizers
