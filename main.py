@@ -3,7 +3,7 @@ from utils import encode_image
 import pandas as pd
 
 
-def compute(image_path:pd.DataFrame):
+def run_with_path(image_path:pd.DataFrame):
     use_gpu = False
 
     # load colorizers
